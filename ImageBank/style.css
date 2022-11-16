@@ -1,0 +1,76 @@
+* {
+	padding:0;
+	margin:0;
+}
+body {
+	color: #333;
+	font: 2.4vw Sans-Serif;
+	padding: 5vw;
+	background: #eee;
+}
+h1 {
+	font-size: 3.8vw;
+	text-align: center;
+	color: #fff;
+	background-color: #2080ff;
+	padding: 2vw 0 1.2vw 0;
+	margin: 0;
+}
+h2 {
+	font-size: 1.6vw;
+	text-align: center;
+	padding: 0 0 1.2vw 0; 
+}
+#container {
+	box-shadow: 0 .5vw 1vw -.5vw rgba(0,0,0,0.5);
+	position: relative;
+	background: white; 
+}
+table {
+	background-color: #F0F0F0;
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1.5vw 0;
+}
+th {
+	background-color: #5e02fee8;
+	color: #FFF;
+	cursor: pointer;
+	padding: .5vw 1vw;
+}
+th small {
+	font-size: 1.1vw; 
+}
+td, th {
+	text-align: left;
+}
+a {
+	text-decoration: none;
+}
+td a {
+	color: #663300;
+	display: block;
+	padding: .5vw 1vw;
+}
+th a {
+	padding-left: 0
+}
+td:first-of-type a {
+/*	background: url(./.images/file.png) no-repeat 1vw 50%;*/
+	padding-left: .5vw;
+}
+th:first-of-type {
+	padding-left: .5vw;
+}
+td:not(:first-of-type) a {
+	background-image: none !important;
+} 
+tr:nth-of-type(odd) {
+	background-color: #E0E0E0;
+}
+tr:hover td {
+	background-color:#CACACA;
+}
+tr:hover td a {
+	color: #000;
+}
