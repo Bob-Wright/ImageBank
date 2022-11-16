@@ -12,7 +12,7 @@
 <body>
 <div id="container">
 	<h1>ImageBank Contents</h1>
-	<h2>This is a collection of images that you may enjoy<br>or use under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY license.</a></h2>
+	<h2>This is a collection of images that you may enjoy<br>or use under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY license.</a><br>A repository for the ImageBank code is on <a href="https://github.com/Bob-Wright/ImageBank">GitHub.</a></h2>
 	<table class="sortable">
 	    <thead>
 		<tr>
