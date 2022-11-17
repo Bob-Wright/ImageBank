@@ -10,16 +10,15 @@
 </head>
 
 <body>
-<div id="container">
 	<h1>ImageBank Contents</h1>
 	<h2>This is a collection of images that you may enjoy<br>or use under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY license.</a><br>A repository for the ImageBank code is on <a href="https://github.com/Bob-Wright/ImageBank">GitHub.</a></h2>
 	<table class="sortable">
 	    <thead>
 		<tr>
-			<th>Filename</th>
-			<th>Preview</th>
-			<th>Size</th>
-<!--	<th>Date Modified</th> --->
+			<th id='th1'>Filename</th>
+			<th id='th2'>Preview</th>
+			<th id='th3'>File Size</th>
+			<th 1d='th4'>Dimensions</th>
 		</tr>
 	    </thead>
 	    <tbody>
@@ -36,8 +35,6 @@
 		return $size;
 	}
 
-	$hide=".";
-
 	// Opens directory
 	$myDirectory=opendir(".");
 	// Gets each entry
@@ -50,6 +47,7 @@
 	// Sorts files
 	sort($dirArray);
 	// Loops through the array of files
+	$hide="."; //we hide files that begin with a period
 	for($index=0; $index < $indexCount; $index++) {
 	// Decides if hidden files should be displayed, based on query above.
 	    if(substr("$dirArray[$index]", 0, 1)!=$hide) {
@@ -60,10 +58,8 @@
 
 	// Gets File Names
 		$name=$dirArray[$index];
-
 	// Separates directories, and performs operations on those directories
-		if(is_dir($dirArray[$index]))
-		{
+		if(is_dir($dirArray[$index])) {
 				$extn="&lt;Directory&gt;";
 				$size="&lt;Directory&gt;";
 				$sizekey="0";
@@ -79,16 +75,19 @@
 				if($name==".."){$name=".. (Parent Directory)"; $extn="&lt;System Dir&gt;";}
 		}
 	// Output
-	$extn=pathinfo($dirArray[$index], PATHINFO_EXTENSION);
+	list($width, $height, $type, $attr) = getimagesize($name);
+
+	//$extn=pathinfo($dirArray[$index], PATHINFO_EXTENSION);
 	// Gets and cleans up file size
 	$size=pretty_filesize($dirArray[$index]);
 	$sizekey=filesize($dirArray[$index]);
 
 	echo("
 		<tr class='$class'>
-			<td><a href='./$name' class='name'>$name</a></td>
-			<td><a href='./$name'><img src='./$name' width=50% height=auto></a></td>
-			<td sorttable_customkey='$sizekey'><a href='./$name'>$size</a></td>
+			<td id=td1><a href='./$name' class='name'>$name</a></td>
+			<td id=td2><a href='./$name'><img src='./$name' width='60%' height='auto'></a></td>
+			<td id=td3 sorttable_customkey='$sizekey'><a href='./$name'>$size</a></td>
+			<td id=td4 sorttable_customkey='$width'><a href='./$name'>$width X $height</a></td>
 	 	</tr>");
 	   }
 	}
@@ -97,6 +96,5 @@
 
 	</tbody>
 </table>
-</div>
 </body>
 </html>

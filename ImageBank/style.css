@@ -4,8 +4,7 @@
 }
 body {
 	color: #333;
-	font: 2.4vw Sans-Serif;
-	padding: 5vw;
+	font: 2vw Sans-Serif;
 	background: #eee;
 }
 h1 {
@@ -19,13 +18,11 @@ h1 {
 h2 {
 	font-size: 1.6vw;
 	text-align: center;
-	padding: 0 0 1.2vw 0; 
+	color: rgb(0, 0, 0);
+	padding: 0 0 1.2vw 0;
+	background-color: #a58aa1;
 }
-#container {
-	box-shadow: 0 .5vw 1vw -.5vw rgba(0,0,0,0.5);
-	position: relative;
-	background: white; 
-}
+
 table {
 	background-color: #F0F0F0;
 	border-collapse: collapse;
@@ -38,11 +35,20 @@ th {
 	cursor: pointer;
 	padding: .5vw 1vw;
 }
-th small {
-	font-size: 1.1vw; 
-}
 td, th {
 	text-align: left;
+}
+#th1, #td1 {
+ width: 25%;
+}
+#th2, #td2 {
+width: 48%;
+}
+#th3, #td3 {
+width: 12%;
+}
+#th4, #td4 {
+width: 15%;
 }
 a {
 	text-decoration: none;
@@ -52,19 +58,6 @@ td a {
 	display: block;
 	padding: .5vw 1vw;
 }
-th a {
-	padding-left: 0
-}
-td:first-of-type a {
-/*	background: url(./.images/file.png) no-repeat 1vw 50%;*/
-	padding-left: .5vw;
-}
-th:first-of-type {
-	padding-left: .5vw;
-}
-td:not(:first-of-type) a {
-	background-image: none !important;
-} 
 tr:nth-of-type(odd) {
 	background-color: #E0E0E0;
 }
